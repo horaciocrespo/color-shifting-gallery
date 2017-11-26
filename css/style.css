@@ -1,0 +1,85 @@
+/* to make sure that when we use padding, widths everything is displayed correctly */
+* {
+    box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    padding: 30px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+img {
+    /* para que se acomode al width del parent */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Gallery */
+.gallery-item {
+    width: 100%;
+    /* vamos a usar position absolute para los overlays, asi que el padre debe tener position relative */
+    position: relative;
+    box-shadow: 5px 10px 26px 0px rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+
+.main-overlay, .secondary-overlay {
+    /* ?? */
+    position: absolute;
+    /* ?? */
+    top: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .9);
+    padding: 90px 60px;
+    box-shadow: 5px 10px 26px 0px rgba(0, 0, 0, .3);
+    /* ?? */
+    transition: transform .2s ease-in;
+}
+
+.main-overlay {
+    left: 0;
+    width: 65%;
+    z-index: 1000;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.main-overlay h1 {
+    font-size: 28px;
+}
+
+.main-overlay h2 {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.main-overlay header {
+    margin-bottom: 30px;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+ul.info {
+    margin: 0;
+    padding: 0;
+}
+
+ul.info:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+ul.info li {
+    list-style-type: none;
+    float: left;
+    margin-right: 60px;
+}
